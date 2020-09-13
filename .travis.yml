@@ -7,6 +7,21 @@ matrix:
       after_script:
         - bash <(curl -s https://codecov.io/bash)
 
+      before_deploy:
+        - git stash --all
+        - sed -i "s/@@version@@/${TRAVIS_TAG}/g" setup.py
+
+      deploy:
+        skip_cleanup: true
+
+        provider: pypi
+        user: __token__
+        password:
+          secure: CmWts4IiRcGNGCWxFSqgyodk9/CkrNsd6Lyds3Nukv/XQOv0logYfNOwq7AsA5RuTERHEpC2SlJeTnYB1Bnq/7WrLljKgSQHqa5tHA/GpiRJtBMQoGWwmZqveq9RY3qxBwJgZMuHQ4Jtv2sqkULipceT1IwfN0+Q8YbBvXskmX/q6t2qIRPdSYX0S/Ad+8+VhT1qdhRpx5hWK824+aRzqauefINCR3RPmyBnSBEhnl9FxevM3qb+buQlpGMGwM2SqS36/XodlUwjirho0mD2aSuXzErMdmqI8a8aWphT04aVK4fuSFQPlpuahAGJywZX5TBKBqCnMwpWoVU5tZGAPN9HdnvWa4Wpp+uqQ5QphYMLhovbgA9jP7o0MS2chKzl3kEIK99mFt8XNPNbEFX1hO+pP99bnQIw+fvfIzCKcRWyhl9iYTwkFeTXWkw59Q27xWqyFNKRUfewDosa6h8wGszlkPF3yF2ARZliqXSFjd8ss4TbDNWkk93Fp7aG88tYlNdh5Q27SmZqJ8Ej+/DaIyG1S3z3QPPJrQb4Q+C/fzVAVaaz+CdYzRfMu87vJYpQyjHUYEycl/e7OmmY5+EbZRzrpScJM1bxi9MQDC5r4lrM6aa8ULYphzhekxR+6e/8CTp0JcLj+Cgpg2slh3IQGoLIxURZzMBaQsoW+bpNokE=
+        on:
+          tags: true
+
+
 install:
   - pip install coverage
   - python setup.py install
