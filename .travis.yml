@@ -1,9 +1,11 @@
 language: python
 
-python:
-  - "3.6"
-  - "3.7"
-  - "3.8"
+matrix:
+  include:
+    - python: "3.7"
+    - python: "3.8"
+      after_script:
+        - bash <(curl -s https://codecov.io/bash)
 
 install:
   - pip install coverage
@@ -11,6 +13,3 @@ install:
 
 script:
   - coverage run -m unittest
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
