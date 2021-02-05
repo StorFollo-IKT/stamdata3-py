@@ -4,8 +4,7 @@ matrix:
   include:
     - python: "3.7"
     - python: "3.8"
-      after_script:
-        - bash <(curl -s https://codecov.io/bash)
+    - python: "3.9"
 
       before_deploy:
         - git stash --all
@@ -28,3 +27,6 @@ install:
 
 script:
   - coverage run -m unittest
+
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
