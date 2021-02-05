@@ -42,7 +42,7 @@ class XMLDataHelper:
 
     def date(self, field):
         data = self.string(field)
-        return datetime.strptime(data, '%Y-%m-%d')
+        return datetime.strptime(data, '%Y-%m-%d').date()
 
     def date_time(self, field):
         data = self.string(field)
