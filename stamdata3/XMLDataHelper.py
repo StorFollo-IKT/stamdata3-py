@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from stamdata3.exceptions import InvalidField
+from StamdataExceptions import InvalidField
 
 
 class XMLDataHelper:

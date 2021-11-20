@@ -2,7 +2,7 @@ import os
 import unittest
 
 from stamdata3.Employment import Employment
-from stamdata3.exceptions import InvalidRelation
+from stamdata3.StamdataExceptions import InvalidRelation
 from stamdata3.stamdata3 import Stamdata3
 
 

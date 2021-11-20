@@ -1,5 +1,6 @@
 from xml.etree import ElementTree
 
+from StamdataExceptions import ResourceNotFound
 from stamdata3.Organisation import Organisation
 from stamdata3.Resource import Resource
 
@@ -44,9 +45,6 @@ def map_resource(resource):
 def map_organisation(organisation):
     return Organisation(organisation)
 
-
-class ResourceNotFound(Exception):
-    pass
 
 # stamdata = Stamdata3()
 # print(stamdata.employee_address(53898))
