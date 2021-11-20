@@ -57,3 +57,6 @@ class Resource:
     @property
     def status(self):
         return self.employee.find('Status').text
+
+    def __str__(self):
+        return '%d %s %s' % (self.resource_id, self.first_name, self.last_name)
