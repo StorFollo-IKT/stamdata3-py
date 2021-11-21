@@ -3,10 +3,6 @@ from datetime import datetime
 from stamdata3.Employment import Employment
 
 
-def map_employment(employment):
-    return Employment(employment)
-
-
 class Resource:
     def __init__(self, employee):
         self.employee = employee
@@ -22,7 +18,7 @@ class Resource:
     @property
     def employments(self):
         employments = self.employee.findall('Employments/Employment')
-        return map(map_employment, employments)
+        return list(map(lambda employment: Employment(employment), employments))
 
     def main_position(self):
         employment = self.employee.find(
