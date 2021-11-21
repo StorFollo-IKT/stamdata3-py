@@ -1,6 +1,6 @@
 from xml.etree import ElementTree
 
-from StamdataExceptions import ResourceNotFound
+from stamdata3.StamdataExceptions import ResourceNotFound
 from stamdata3.Organisation import Organisation
 from stamdata3.Resource import Resource
 

@@ -1,6 +1,6 @@
 from stamdata3.Relation import Relation
 from stamdata3.XMLDataHelper import XMLDataHelper
-from StamdataExceptions import InvalidRelation
+from stamdata3.StamdataExceptions import InvalidRelation
 
 
 class Employment(XMLDataHelper):
