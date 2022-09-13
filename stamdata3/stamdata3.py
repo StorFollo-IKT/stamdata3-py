@@ -1,8 +1,8 @@
 from xml.etree import ElementTree
 
-from stamdata3.StamdataExceptions import ResourceNotFound
-from stamdata3.Organisation import Organisation
-from stamdata3.Resource import Resource
+from .Organisation import Organisation
+from .Resource import Resource
+from .StamdataExceptions import ResourceNotFound
 
 
 class Stamdata3:
